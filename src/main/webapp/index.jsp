@@ -47,7 +47,7 @@
             const settings = {
                 method: 'GET',
                 headers: {
-                    'X-RapidAPI-Key': 'YOUR_RAPIDAPI_KEY',
+                    'X-RapidAPI-Key': 'a242de4503msh242d8070e0f34d9p1d7db7jsn0e6c3a02e8fa',
                     'X-RapidAPI-Host': 'global-automotives-cloud.p.rapidapi.com'
                 }
             };
