@@ -40,12 +40,27 @@
 </head>
 <body>
     <h1>WAR Web Service</h1>
-    <ul>
-        <li><a href="http://localhost:8080/wwp-1.0.0/webapi/service" class="button">Service</a></li>
-        <li><a href="http://localhost:8080/wwp-1.0.0/webapi/service/hello" class="button">Hello</a></li>
-        <li><a href="http://localhost:8080/wwp-1.0.0/webapi/service/time" class="button">Time</a></li>
-        <li><a href="http://localhost:8080/wwp-1.0.0/webapi/service/send" class="button">Send</a> (Accessible using POST)</li>
-        <li><a href="http://localhost:8080/wwp-1.0.0/webapi/service/send/rowan" class="button">Send to Rowan</a> (Accessible using POST)</li>
-    </ul>
+    <button class="button" onclick="fetchData()">Fetch Vehicle Data</button>
+
+    <script>
+        async function fetchData() {
+            const settings = {
+                method: 'GET',
+                headers: {
+                    'X-RapidAPI-Key': 'YOUR_RAPIDAPI_KEY',
+                    'X-RapidAPI-Host': 'global-automotives-cloud.p.rapidapi.com'
+                }
+            };
+
+            try {
+                const response = await fetch('https://global-automotives-cloud.p.rapidapi.com/vehicle?country_code=fr&registration_no=Eg258ma', settings);
+                const data = await response.json();
+                console.log(data);
+                // You can process the response data here
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+    </script>
 </body>
 </html>
